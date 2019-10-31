@@ -38,6 +38,14 @@ namespace BethanysPieShop.Controllers
             return View(piesListViewModel);
         }
 
+        public IActionResult Details(int id)
+        {
+            var pie = _pieRepository.GetPieById(id);
+            if (pie == null)
+                return NotFound();
+            return View(pie);             
+        }
+
 
 
         //// GET: /<controller>/
