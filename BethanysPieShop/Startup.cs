@@ -31,7 +31,7 @@ namespace BethanysPieShop
             //register own services
             services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DockerConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<IPieRepository, PieRepository>(); //instance per request (singleton per request)
             services.AddScoped<ICategoryRepository, CategoryRepository>();
